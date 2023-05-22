@@ -1,4 +1,14 @@
-<div class="container-fluid">
-<div class="row"> 
-  <h1 class="text-center text-primary">CXCV Angular Concepts</h1> </div>
+<div>
+  <div class="row">
+    <app-header></app-header>
+  </div>
+  <div class="row" >
+    <div class="col-3">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-9">
+      <h1>cxcv project content</h1>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

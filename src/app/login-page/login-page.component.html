@@ -1,0 +1,53 @@
+<div class="container">
+  <div id="left-side">
+    <img src="../../assets/login-image.png" alt="" fill />
+  </div>
+  <div id="right-side">
+    <div
+      class="alert alert-success"
+      role="alert"
+      *ngIf="loginSuccess == 'success'"
+    >
+      Login Successfull!
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="loginSuccess == 'error'"
+    >
+      Login Failed.Please Try Again!
+    </div>
+    <div class="card">
+      <div class="mb-4">
+        <h4>Login</h4>
+      </div>
+      <div class="mb-3 email">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Email address</label
+        >
+        <input
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="name@example.com"
+          [formControl]="email"
+          required
+        />
+      </div>
+      <div>
+        <label for="inputPassword5" class="form-label">Password</label>
+        <input
+          type="password"
+          id="inputPassword5"
+          class="form-control"
+          aria-labelledby="passwordHelpBlock"
+          [formControl]="password"
+          required
+        />
+      </div>
+      <button type="button" class="btn btn-danger" (click)="login()">
+        Login
+      </button>
+    </div>
+  </div>
+</div>

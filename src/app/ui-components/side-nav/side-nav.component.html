@@ -1,0 +1,5 @@
+<div class="sidebar" id="mySidebar" [style.width]="toggleNavBar ? '250px' : '0'">
+    <a href="#" class="closebtn" (click)="closeNav()">&times;</a>
+    <a *ngFor="let menu of menus;" [routerLink]="menu.link">{{menu.option}}</a>
+</div>
+<button class="openbtn" (click)="openNav()" [style.display]="toggleNavBar ? 'none' : 'block'">☰</button>

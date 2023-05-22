@@ -11,7 +11,7 @@ export class AppComponent implements OnInit{
 
  }
   title = 'CXCV';
-  isLoginPage = false;
+  isLoginPage = true;
   ngOnInit(): void {
     this.router.events.subscribe(value => {
       if(value instanceof NavigationEnd) {
@@ -19,6 +19,5 @@ export class AppComponent implements OnInit{
       }   
         console.log(this.router.url.toString());
       });
-   
   }
 }

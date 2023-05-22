@@ -1,11 +1,10 @@
 <div>
-  <app-side-nav></app-side-nav>
-  <div class="row">
+  <div class="row" *ngIf="!isLoginPage">
+    <app-side-nav></app-side-nav>
     <app-header></app-header>
   </div>
   <div class="row" >
-    <div class="col-12 text-center">
-      <h1>cxcv project content</h1>
+    <div class="col-12" [class.col-12]="isLoginPage">
       <router-outlet></router-outlet>
     </div>
   </div>

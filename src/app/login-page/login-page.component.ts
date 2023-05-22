@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -16,7 +17,7 @@ export class LoginPageComponent {
     pass: '1234',
   };
 
-  constructor() {}
+  constructor(private router:Router) {}
 
   removeAlert() {
     setTimeout(() => {
@@ -33,6 +34,7 @@ export class LoginPageComponent {
       this.password.setValue('');
       this.loginSuccess = 'success';
       this.removeAlert();
+      this.router.navigate(['/landingpage']);
     } else {
       this.loginSuccess = 'error';
       this.removeAlert();

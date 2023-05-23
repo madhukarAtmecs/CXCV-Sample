@@ -9,6 +9,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CommonComponent } from './common/common.component';
 import { SideNavComponent } from './ui-components/side-nav/side-nav.component';
+import { UnauthorizedPageComponent } from './pages/unauthorized-page/unauthorized-page.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { SideNavComponent } from './ui-components/side-nav/side-nav.component';
     CommonComponent,
     LoginPageComponent,
     SideNavComponent,
+    UnauthorizedPageComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

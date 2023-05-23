@@ -22,7 +22,7 @@
     color: #fff;
     font-size: 60px;
     font-weight: bold;
-    padding-left: 70px;
+    padding-left: 40px;
 }
 
 /* Change the background color on mouse-over */
@@ -53,4 +53,16 @@
     .header-right {
         float: none;
     }
+}
+
+/* Add media queries for responsiveness - when the screen is 600px wide or less, stack the links on top of each other */
+@media screen and (max-width: 600px) {
+    .header-right {
+        display: none; 
+    }   
+
+    .header a.logo {
+        padding-left: 75px;
+    }
+    
 }

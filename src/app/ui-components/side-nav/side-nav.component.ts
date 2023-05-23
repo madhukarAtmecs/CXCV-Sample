@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, Renderer2, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-side-nav',
@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 export class SideNavComponent {
 
   // side navbar visibility
-  toggleNavBar = false;
+  sidebar: boolean = false;
+  toggleNavBar: boolean;
 
   // options in side nav-bar
   menus = [
@@ -25,14 +26,30 @@ export class SideNavComponent {
       link: 'commonUrl'
     },
     {
-      option: 'Contact',
-      link: 'commonUrl'
+      option: 'Sign out',
+      link: '/login'
     }
   ]
 
-  // This function is to open side nave bar
-  openNav = () => this.toggleNavBar = true;
+  constructor(private renderer: Renderer2, private el: ElementRef) {
+    this.toggleNavBar = !(window.innerWidth < 600);
+  }
 
-  // This function is to close side nave bar
-  closeNav = () => this.toggleNavBar = false;
+  @HostListener('window:resize', ['$event'])
+  onResize = (event: any) => {
+    // Adjust the breakpoint as per your requirement
+    this.toggleNavBar = !(event.target.innerWidth < 600); 
+  }
+
+  // This function is to open side nav bar
+  openNav = () => {
+    this.toggleNavBar = true;
+    this.sidebar = true;
+  }
+
+  // This function is to close side nav bar
+  closeNav = () => {
+    this.toggleNavBar = false;
+    this.sidebar = false;
+  }
 }

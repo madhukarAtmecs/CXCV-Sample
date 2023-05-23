@@ -1,4 +1,4 @@
-import { Component, HostListener, Renderer2, ElementRef } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-side-nav',
@@ -31,7 +31,7 @@ export class SideNavComponent {
     }
   ]
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {
+  constructor() {
     this.toggleNavBar = !(window.innerWidth < 600);
   }
 

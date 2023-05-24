@@ -1,1 +1,11 @@
-<p>home works!</p>
+<sol-grid
+[columnDefs]="headerNamesWithDrag"
+[rowData]="dataRowWithDragAll"
+[gridOptions]="gridOptionsDrag"
+[pagination]="pagination"
+[maxItemsPerPage]="pageSize"
+[suppressCellFocus]="false"
+[gridState]="grid1State"
+(saveState)="saveGrid1State($event)"
+>
+</sol-grid>

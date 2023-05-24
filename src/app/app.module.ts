@@ -11,7 +11,7 @@ import { CommonComponent } from './common/common.component';
 import { SideNavComponent } from './ui-components/side-nav/side-nav.component';
 import { UnauthorizedPageComponent } from './pages/unauthorized-page/unauthorized-page.component';
 import { HomeComponent } from './home/home.component';
-
+import { GridModule } from 'nice-solaris-ngx/grid';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +27,8 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GridModule
   ],
   providers: [],
   bootstrap: [AppComponent],

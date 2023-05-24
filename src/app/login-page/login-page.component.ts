@@ -17,7 +17,9 @@ export class LoginPageComponent {
     pass: '1234',
   };
 
-  constructor(private router:Router) {}
+  constructor(private router: Router) {
+    window.localStorage.setItem("loggedIn","false");
+  }
 
   removeAlert() {
     setTimeout(() => {
@@ -35,6 +37,7 @@ export class LoginPageComponent {
       this.loginSuccess = 'success';
       this.removeAlert();
       this.router.navigate(['/landingpage']);
+      window.localStorage.setItem('loggedIn',"true");
     } else {
       this.loginSuccess = 'error';
       this.removeAlert();
